@@ -1,6 +1,6 @@
 const [BOARD, SCORE, LEVEL, NEXTPIECE] = ['board', 'score', 'level', 'next-piece'].map((id) => document.getElementById(id));
 const BOARD_SIZE = { width: 10, height: 24 };
-const INITIAL_STATE = { board: [[]], score: 0, level: 1, speed: 1000, lines: 0, nextPiece: '', gameOver: false, piece: null, lastTime: 0, restartKey: 'r' };
+const INITIAL_STATE = { board: [[]], score: 0, level: 1, speed: 1000, lines: 0, nextPiece: '', gameOver: false, piece: null, lastTime: 0, restartKey: 'r', pause: false };
 const GAME_STATE = { ...INITIAL_STATE };
 const MOVEMENTS = { DOWN: 'ArrowDown', LEFT: 'ArrowLeft', RIGHT: 'ArrowRight', UP: 'ArrowUp', DROP: ' ' };
 const SCORES = [0, 40, 100, 300, 1200]; // Max. 4 lines at once (Because the max piece height is 4)
@@ -11,14 +11,19 @@ const init = () => {
   document.addEventListener('keydown', (e) => keyPressed(e.key, e));
   document.getElementById('board-container').addEventListener('click', (e) => keyPressed(GAME_STATE.restartKey, e));
   document.querySelectorAll('.button[data-key]').forEach((button) => button.addEventListener('click', (e) => keyPressed(button.getAttribute('data-key'), e)));
-  
+  document.getElementById('restart-letter').innerHTML = GAME_STATE.restartKey.toUpperCase();
+
+  document.getElementById('pause-button').addEventListener('click', () => {
+    GAME_STATE.pause = !GAME_STATE.pause;
+    if (GAME_STATE.pause) document.body.classList.add('pause');
+    else document.body.classList.remove('pause');
+  });
+
   if (isMobile()) document.body.classList.add('mobile');
   
   // Start game
   startGame();
 };
-
-
 
 const startGame = () => {
   // Reset game state
@@ -94,9 +99,10 @@ const nextPiece = () => {
 const loop = () => {
   // If game over, stop loop
   if (GAME_STATE.gameOver) return;
-
+  
   // Loop
   window.requestAnimationFrame(loop);
+  if (GAME_STATE.pause) return;
 
   // Game started - add new random piece
   if (GAME_STATE.piece.piece === null) nextPiece();

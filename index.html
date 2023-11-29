@@ -20,6 +20,17 @@
           <div class="">Level<span class="pl-05" id="level"></span></div>
         </div>
         <!-- --------------- -->
+        <!-- PAUSE BUTTON   -->
+        <!-- --------------- -->
+        <div id="pause-button" class="position-absolute d-flex d-flex-center border-radius-4 d-flex-column wh-3 cursor-pointer">
+          <div class="position-relative button-pause" style="width: 2rem; height: 2rem;">
+            <svg focusable="false" aria-hidden="true" viewBox="0 0 24 24"><path d="M9 16h2V8H9v8zm3-14C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm1-4h2V8h-2v8z"></path></svg>
+          </div>
+          <div class="position-relative button-play d-none" style="width: 2rem; height: 2rem;">
+            <svg focusable="false" aria-hidden="true" viewBox="0 0 24 24"><path d="m10 16.5 6-4.5-6-4.5v9zM12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"></path></svg>
+          </div>
+        </div>
+        <!-- --------------- -->
         <!-- NEXT PIECE      -->
         <!-- --------------- -->
         <div id="next-piece-container" class="position-absolute d-flex d-flex-center border-radius-4 d-flex-column">
@@ -36,7 +47,7 @@
           <span class="p-1 border-radius-4 text-center">
             <span>Game Over</span>
             <br /><br />
-            <span class="mobile-hide">'<b>R</b>' to restart...</span>
+            <span class="mobile-hide">'<b><span id="restart-letter"></span></b>' to restart...</span>
             <span class="d-none mobile-show">Press to restart</span>
           </span>
         </div>
