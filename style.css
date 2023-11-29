@@ -70,6 +70,7 @@ html, body {
 body.game-over .game-over { display: flex;  }
 body.game-over .game-over span { color: var(--game-over-color); background-color: var(--game-over-background-color); }
 
+body.mobile #buttons { display: flex!important; }
 #buttons { bottom: -2.5rem; }
 .button { width: 1.5rem; height: 1.5rem; color: var(--icon-color); cursor: pointer; }
 .button svg { fill: var(--icon-color) }
