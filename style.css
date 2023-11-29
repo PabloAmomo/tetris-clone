@@ -70,7 +70,6 @@ html, body {
 body.game-over .game-over { display: flex;  }
 body.game-over .game-over span { color: var(--game-over-color); background-color: var(--game-over-background-color); }
 
-body.mobile #buttons { display: flex!important; }
 #buttons { bottom: -2.5rem; }
 .button { width: 1.5rem; height: 1.5rem; color: var(--icon-color); cursor: pointer; }
 .button svg { fill: var(--icon-color) }
@@ -80,6 +79,8 @@ body.mobile #buttons { display: flex!important; }
 /* ----------- */
 /* GENERAL     */
 /* ----------- */
+body.mobile .mobile-hide { display: none!important; }
+body.mobile .mobile-show { display: flex!important; }
 .text-center { text-align: center; }
 .border-radius-4 { border-radius: 4px; }
 .lr-0 { left: 0; right: 0; }

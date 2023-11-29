@@ -11,7 +11,7 @@ const init = () => {
   document.addEventListener('keydown', (e) => keyPressed(e.key, e));
   document.getElementById('board-container').addEventListener('click', (e) => keyPressed(GAME_STATE.restartKey, e));
   document.querySelectorAll('.button[data-key]').forEach((button) => button.addEventListener('click', (e) => keyPressed(button.getAttribute('data-key'), e)));
-    
+  
   if (isMobile()) document.body.classList.add('mobile');
   
   // Start game
