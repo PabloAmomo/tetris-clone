@@ -71,8 +71,8 @@ body.game-over .game-over { display: flex;  }
 body.game-over .game-over span { color: var(--game-over-color); background-color: var(--game-over-background-color); }
 body.game-over #pause-button { display: none!important; }
 
-#buttons { bottom: -2.5rem; }
-.button { width: 1.5rem; height: 1.5rem; color: var(--icon-color); cursor: pointer; }
+#buttons { bottom: -3.5rem; }
+.button { width: 2.5rem; height: 2.5rem; color: var(--icon-color); cursor: pointer; }
 .button svg { fill: var(--icon-color) }
 #next-piece-container { top: 2.4rem; left: -5rem; background-color: var(--next-piece-background-color); height: 5rem; width: 4.5rem; padding: .25rem; }
 #next-piece .piece { position: relative!important; }
@@ -91,6 +91,7 @@ body.mobile .mobile-show { display: flex!important; }
 .text-center { text-align: center; }
 .border-radius-4 { border-radius: 4px; }
 .lr-0 { left: 0; right: 0; }
+.lr-n4 { left: -4rem; right: -4rem; }
 .p-1 { padding: 1rem; }
 .mt-1 { margin-top: 1rem; }
 .w-100 { width: 100%; }

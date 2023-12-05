@@ -20,7 +20,7 @@ const init = () => {
   });
 
   if (isMobile()) document.body.classList.add('mobile');
-  
+ 
   // Start game
   startGame();
 };
@@ -107,6 +107,8 @@ const loop = () => {
   // Game started - add new random piece
   if (GAME_STATE.piece.piece === null) nextPiece();
 
+  console.log(GAME_STATE.piece);
+
   // Check if piece is at end
   const pieceAtEnd = checkCollition({ ...GAME_STATE.piece, y: GAME_STATE.piece.y + 1 });
 
@@ -146,7 +148,6 @@ const loop = () => {
     }
 
     // Remove current piece and add new piece
-    // GAME_STATE.lastTime = Date.now();
     GAME_STATE.piece.pieceEl.remove();
     nextPiece();
     // Object.assign(GAME_STATE.piece, newRandomPiece({ width: GAME_STATE.board[0].length }));
